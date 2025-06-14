@@ -1,7 +1,3 @@
-const { Client, GatewayIntentBits, ChannelType } = require('discord.js-selfbot-v13')
-const prompt = require('prompt-sync')()
-const notifier = require('node-notifier');
-
 const User_Token = 'MTA5MzUwNDcxNTkzMDc0Mjg0Ng.GWjGFl._XqfPR2YXZJfRxA1bpMJNmHgzKGs8n-CWN9DJs' // prompt('Enter your Discord Token : ')
 const CHANNEL_ID = '1364498257274867824' // prompt('Enter Channel ID : ');
 
