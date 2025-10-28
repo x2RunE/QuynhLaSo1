@@ -1,36 +1,5 @@
 pcall(function()
 repeat wait() until game:IsLoaded()
-
-local function RequestAPI(u,m,d)
-    if m == 'post' then
-        return http_request({
-            Url = u,
-            Method = "POST",
-            Headers = {
-                ["Content-Type"] = "application/json"
-            },
-            Body = cloneref(game:GetService('HttpService')):JSONEncode(d)
-        })
-    elseif m == 'get' then
-        print('Nah')
-    end
-end
-local localCheckRadiant, radiantCheck = pcall(function()
-    return RequestAPI(
-        'https://wl-9i8x.onrender.com/whitelist',
-        'post',
-    {
-        key = getgenv().Key,
-        hwid = gethwid()
-    })
-end)
-if localCheckRadiant and radiantCheck.StatusCode ~= 200 and radiantCheck.StatusCode ~= 201 then
-    game.Players.LocalPlayer:Kick("You're blacklisted \n reason : Try to crack Radiant Hub Script")
-    local r = rawget(getrawmetatable(game.Players.LocalPlayer), "Kick") or game.Players.LocalPlayer.Kick
-    r(game.Players.LocalPlayer, "You're blacklisted \n reason : Try to crack Radiant Hub Script")
-    task.wait(3)
-    game:Shutdown()
-end
 pcall(function()
 	local old
 	old = hookmetamethod(game, "__namecall", function(self, ...)
