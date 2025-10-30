@@ -35,7 +35,7 @@ task.spawn(function()
                 Text = "Caught !",
                 Icon = "rbxassetid://78102893621750"
             })
-            wait(4.5)
+            wait(getgenv().Delay)
             action:InvokeServer({ Action = "Reel" })
             game:GetService("StarterGui"):SetCore("SendNotification", {
                 Title = "Radiant Macro - Free",
