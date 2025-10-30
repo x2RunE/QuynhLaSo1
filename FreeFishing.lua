@@ -23,6 +23,11 @@ task.spawn(function()
             Goal = (character.HumanoidRootPart.Position + Vector3.new(0, -5, -20)),
             Bait = (getgenv().Bait.." Fish Bait")
         })
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Radiant Macro - Free",
+            Text = "Throwed Bait : "..getgenv().Bait,
+            Icon = "rbxassetid://78102893621750"
+        })
         wait(0.75)
         action:InvokeServer({
             Action = "Landed",
