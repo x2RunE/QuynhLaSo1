@@ -67,7 +67,7 @@ btn2.MouseButton1Click:Connect(function()
         bv.Velocity = Vector3.new(0, 0, 0)
         bv.P = 1000
         bv.Parent = root
-    elseif root:FindFistChild('NoFall') then
+    elseif root:FindFirstChild('NoFall') then
         root.NoFall:Destroy()
     end
 end)
