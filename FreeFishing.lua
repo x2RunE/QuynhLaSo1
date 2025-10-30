@@ -25,7 +25,9 @@ task.spawn(function()
         wait(120)
     end
 end)
-
+local gui = Instance.new("ScreenGui")
+gui.ResetOnSpawn = false
+gui.Parent = plr:WaitForChild("PlayerGui")
 local btn = Instance.new("TextButton")
 btn.Size = UDim2.new(0, 120, 0, 120)
 btn.Position = UDim2.new(0.5, -60, 0.8, 0)
@@ -50,7 +52,6 @@ btn.MouseButton1Click:Connect(function()
         end
     end)
 end)
-
 local btn2 = Instance.new("TextButton")
 btn2.Size = UDim2.new(0, 120, 0, 120)
 btn2.Position = UDim2.new(0.5, -170, 0.8, 0)
