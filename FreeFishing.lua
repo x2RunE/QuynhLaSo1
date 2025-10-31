@@ -1,3 +1,6 @@
+getgenv().Bait = 'Common'
+getgenv().Delay = 5.25
+getgenv().AutoBuyBait = true -- Trade Hub Only
 local plr = game:GetService("Players").LocalPlayer
 local character = plr.Character or plr.CharacterAdded:Wait()
 local Effects = workspace:WaitForChild("Effects")
@@ -28,7 +31,7 @@ end)
 local gui = Instance.new("ScreenGui")
 gui.ResetOnSpawn = false
 gui.Parent = plr:WaitForChild("PlayerGui")
-
+getgenv().Start = true
 local btn = Instance.new("TextButton")
 btn.Size = UDim2.new(0, 120, 0, 120)
 btn.Position = UDim2.new(0.5, -60, 0.8, 0)
@@ -39,7 +42,6 @@ btn.Parent = gui
 btn.MouseButton1Click:Connect(function()
     local p = workspace:FindFirstChild("Part")
     if p then p:Destroy() end
-
     local root = character:WaitForChild("HumanoidRootPart")
     local part = Instance.new("Part")
     part.Name = "Part"
@@ -48,14 +50,12 @@ btn.MouseButton1Click:Connect(function()
     part.CanCollide = true
     part.Parent = workspace
     part.Position = root.Position - Vector3.new(0, root.Size.Y/2 + part.Size.Y*1.2, 0)
-
     task.spawn(function()
         while task.wait(0.1) and part.Parent do
             part.Color = Color3.fromHSV(tick() % 5 / 5, 1, 1)
         end
     end)
 end)
-
 local btn2 = Instance.new("TextButton")
 btn2.Size = UDim2.new(0, 120, 0, 120)
 btn2.Position = UDim2.new(0.5, -190, 0.8, 0)
@@ -66,7 +66,6 @@ btn2.Parent = gui
 btn2.MouseButton1Click:Connect(function()
     local root = character:WaitForChild("HumanoidRootPart")
     local bv = root:FindFirstChild("NoFall")
-
     if not bv then
         bv = Instance.new("BodyVelocity")
         bv.Name = "NoFall"
@@ -79,9 +78,34 @@ btn2.MouseButton1Click:Connect(function()
         btn2.Text = "Lock Character"
     end
 end)
-
+local btn3 = Instance.new("TextButton")
+btn3.Size = UDim2.new(0, 120, 0, 120)
+btn3.Position = UDim2.new(0.5, -320, 0.8, 0)
+btn3.Text = "Stop"
+btn3.BackgroundColor3 = Color3.fromRGB(100,255 ,50)
+btn3.TextColor3 = Color3.new(1, 1, 1)
+btn3.Parent = gui
+btn3.MouseButton1Click:Connect(function()
+    if not getgenv().Start then
+        getgenv().Start = true
+    else
+        getgenv().Start = false
+        btn2.Text = "Start"
+    end
+end)
+local function walkTo(v)
+    local char = plr.Character or plr.CharacterAdded:Wait()
+    local hum = char:FindFirstChildOfClass("Humanoid")
+    if hum and hum.MoveToFinished then
+        local root = char:FindFirstChild("HumanoidRootPart")
+        if root then
+            hum:MoveTo(v)
+            hum.MoveToFinished:Wait()
+        end
+    end
+end
 task.spawn(function()
-    while task.wait() do
+    while task.wait() and getgenv().Start do
         if not (function()
             for _,v in next,character:GetChildren() do
                 if v.Name:find('Rod') then
@@ -92,6 +116,10 @@ task.spawn(function()
             continue
         end
         if https:JSONDecode(game.ReplicatedStorage['Stats' .. plr.Name].Inventory.Inventory.Value)[getgenv().Bait..' Fish Bait'] == nil then
+            if getgenv().Bait == 'Common' and getgenv().AutoBuyBait then
+                walkTo(Vector3.new(107, 10, -59))
+                game.ReplicatedStorage.Events.Shop:InvokeServer(workspace.BuyableItems:FindFirstChild("Common Fish Bait"),300)
+            end
             continue
         end
         action:InvokeServer({
@@ -123,7 +151,7 @@ task.spawn(function()
                 Text = "Got Fish !",
                 Icon = "rbxassetid://78102893621750"
             })
-            wait(1)
+            wait(0.25)
             action:InvokeServer({ Action = "HookReturning" })
             action:InvokeServer({ Action = "Cancel" })
         end
