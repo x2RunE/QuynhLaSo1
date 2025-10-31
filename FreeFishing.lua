@@ -1,6 +1,3 @@
-getgenv().Bait = 'Common'
-getgenv().Delay = 5.25
-getgenv().AutoBuyBait = true -- Trade Hub Only
 local plr = game:GetService("Players").LocalPlayer
 local character = plr.Character or plr.CharacterAdded:Wait()
 local Effects = workspace:WaitForChild("Effects")
@@ -116,10 +113,6 @@ task.spawn(function()
             continue
         end
         if https:JSONDecode(game.ReplicatedStorage['Stats' .. plr.Name].Inventory.Inventory.Value)[getgenv().Bait..' Fish Bait'] == nil then
-            if getgenv().Bait == 'Common' and getgenv().AutoBuyBait then
-                walkTo(Vector3.new(107, 10, -59))
-                game.ReplicatedStorage.Events.Shop:InvokeServer(workspace.BuyableItems:FindFirstChild("Common Fish Bait"),300)
-            end
             continue
         end
         action:InvokeServer({
@@ -154,7 +147,9 @@ task.spawn(function()
             wait(0.25)
             action:InvokeServer({ Action = "HookReturning" })
             action:InvokeServer({ Action = "Cancel" })
+            if getgenv().Bait == 'Common' and getgenv().AutoBuyBait then
+                game.ReplicatedStorage.Events.Shop:InvokeServer(workspace.BuyableItems:FindFirstChild("Common Fish Bait"),1)
+            end
         end
-        wait(1)
     end
 end)
