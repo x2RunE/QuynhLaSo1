@@ -147,9 +147,10 @@ task.spawn(function()
             wait(0.25)
             action:InvokeServer({ Action = "HookReturning" })
             action:InvokeServer({ Action = "Cancel" })
-            if getgenv().Bait == 'Common' and getgenv().AutoBuyBait then
-                game.ReplicatedStorage.Events.Shop:InvokeServer(workspace.BuyableItems:FindFirstChild("Common Fish Bait"),1)
-            end
+        end
+        wait(0.5)
+        if getgenv().Bait == 'Common' and getgenv().AutoBuyBait then
+            game.ReplicatedStorage.Events.Shop:InvokeServer(workspace.BuyableItems:FindFirstChild("Common Fish Bait"),1)
         end
     end
 end)
