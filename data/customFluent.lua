@@ -5270,7 +5270,7 @@ local aa = {
 		local aa, ab, ac, ad, ae = b(54);
 		return {
 			Name = "Mahiru",
-			Accent = Color3.fromRGB(72, 138, 182),
+			Accent = Color3.fromRGB(255, 214, 90),
 			AcrylicMain = Color3.fromRGB(255, 255, 255),
 			AcrylicBorder = Color3.fromRGB(230, 230, 230),
 			AcrylicGradient = ColorSequence.new(Color3.fromRGB(255, 255, 255), Color3.fromRGB(255, 245, 210)),
@@ -5282,7 +5282,7 @@ local aa = {
 			InElementBorder = Color3.fromRGB(210, 210, 210),
 			ElementTransparency = 0.4,
 			ToggleSlider = Color3.fromRGB(230, 230, 200),
-			ToggleToggled = Color3.fromRGB(255, 255, 255),
+			ToggleToggled = Color3.fromRGB(0, 0, 0),
 			SliderRail = Color3.fromRGB(230, 230, 230),
 			DropdownFrame = Color3.fromRGB(255, 255, 255),
 			DropdownHolder = Color3.fromRGB(250, 250, 235),
