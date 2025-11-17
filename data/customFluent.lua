@@ -5270,7 +5270,7 @@ local aa = {
 		local aa, ab, ac, ad, ae = b(54);
 		return {
 			Name = "Mahiru",
-			Accent = Color3.fromRGB(0,0,0),
+			Accent = Color3.fromRGB(255, 214, 90),
 			AcrylicMain = Color3.fromRGB(0, 0, 0),
 			AcrylicBorder = Color3.fromRGB(230, 230, 230),
 			AcrylicGradient = ColorSequence.new(Color3.fromRGB(255, 255, 255), Color3.fromRGB(255, 245, 210)),
