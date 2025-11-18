@@ -1732,20 +1732,20 @@ local aa = {
 						FillDirection = Enum.FillDirection.Horizontal,
 						SortOrder = Enum.SortOrder.LayoutOrder
 					}),
-					l("TextLabel", {
-						RichText = true,
-						Text = n.Title,
-						FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal),
-						TextSize = 12,
-						TextXAlignment = "Left",
-						TextYAlignment = "Center",
-						Size = UDim2.fromScale(0, 1),
-						AutomaticSize = Enum.AutomaticSize.X,
+					l("Frame", {
+						Size = UDim2.fromOffset(20, 26), -- tăng chiều cao để có chỗ dịch xuống
 						BackgroundTransparency = 1,
-						ThemeTag = {
-							TextColor3 = "Text"
-						}
+					}, {
+						l("ImageLabel", {
+							Image = n.Title,
+							Size = UDim2.fromOffset(20, 20),
+							BackgroundTransparency = 1,
+							ImageColor3 = Color3.fromRGB(255, 255, 255),
+							Position = UDim2.new(0, 0, 0, 10), -- ✔ Dịch xuống 5px (hoạt động thật)
+							AnchorPoint = Vector2.new(0, 0)
+						})
 					}),
+
 					l("TextLabel", {
 						RichText = true,
 						Text = n.SubTitle,
@@ -5270,40 +5270,32 @@ local aa = {
 		local aa, ab, ac, ad, ae = b(54);
 		return {
 			Name = "Mahiru",
-			Accent = Color3.fromRGB(0, 103, 192),
-			AcrylicMain = Color3.fromRGB(200, 200, 200),
-			AcrylicBorder = Color3.fromRGB(120, 120, 120),
-			AcrylicGradient = ColorSequence.new(Color3.fromRGB(255, 255, 255), Color3.fromRGB(255, 255, 255)),
-			AcrylicNoise = 0.96,
-			TitleBarLine = Color3.fromRGB(160, 160, 160),
-			Tab = Color3.fromRGB(90, 90, 90),
-			Element = Color3.fromRGB(255, 255, 255),
-			ElementBorder = Color3.fromRGB(180, 180, 180),
-			InElementBorder = Color3.fromRGB(150, 150, 150),
-			ElementTransparency = 0.65,
-			ToggleSlider = Color3.fromRGB(40, 40, 40),
-			ToggleToggled = Color3.fromRGB(255, 255, 255),
-			SliderRail = Color3.fromRGB(40, 40, 40),
-			DropdownFrame = Color3.fromRGB(200, 200, 200),
-			DropdownHolder = Color3.fromRGB(240, 240, 240),
-			DropdownBorder = Color3.fromRGB(200, 200, 200),
-			DropdownOption = Color3.fromRGB(150, 150, 150),
-			Keybind = Color3.fromRGB(120, 120, 120),
-			Input = Color3.fromRGB(200, 200, 200),
-			InputFocused = Color3.fromRGB(100, 100, 100),
-			InputIndicator = Color3.fromRGB(80, 80, 80),
-			Dialog = Color3.fromRGB(255, 255, 255),
-			DialogHolder = Color3.fromRGB(240, 240, 240),
-			DialogHolderLine = Color3.fromRGB(228, 228, 228),
-			DialogButton = Color3.fromRGB(255, 255, 255),
-			DialogButtonBorder = Color3.fromRGB(190, 190, 190),
-			DialogBorder = Color3.fromRGB(140, 140, 140),
-			DialogInput = Color3.fromRGB(250, 250, 250),
-			DialogInputLine = Color3.fromRGB(160, 160, 160),
-			Text = Color3.fromRGB(0, 0, 0),
-			SubText = Color3.fromRGB(40, 40, 40),
-			Hover = Color3.fromRGB(50, 50, 50),
-			HoverChange = 0.16
+			Accent = Color3.fromRGB(255, 245, 210),
+			AcrylicMain = Color3.fromRGB(30, 30, 30),
+			AcrylicBorder = Color3.fromRGB(255, 245, 210),
+			AcrylicGradient = ColorSequence.new(Color3.fromRGB(25, 25, 25), Color3.fromRGB(15, 15, 15)),
+			AcrylicNoise = 0.94,
+			TitleBarLine = Color3.fromRGB(255, 245, 210),
+			Tab = Color3.fromRGB(255, 245, 210),
+			Element = Color3.fromRGB(70, 70, 70),
+			ElementBorder = Color3.fromRGB(25, 25, 25),
+			InElementBorder = Color3.fromRGB(55, 55, 55),
+			ToggleSlider = Color3.fromRGB(255, 245, 210),
+			ToggleToggled = Color3.fromRGB(0, 0, 0),
+			ElementTransparency = 0.82,
+			DropdownFrame = Color3.fromRGB(120, 120, 120),
+			SliderRail = Color3.fromRGB(255, 245, 210),
+			DropdownHolder = Color3.fromRGB(35, 35, 35),
+			DropdownBorder = Color3.fromRGB(255, 245, 210),
+			Dialog = Color3.fromRGB(35, 35, 35),
+			DialogHolder = Color3.fromRGB(25, 25, 25),
+			DialogHolderLine = Color3.fromRGB(20, 20, 20),
+			DialogButton = Color3.fromRGB(35, 35, 35),
+			DialogButtonBorder = Color3.fromRGB(55, 55, 55),
+			DialogBorder = Color3.fromRGB(50, 50, 50),
+			DialogInput = Color3.fromRGB(45, 45, 45),
+			DialogInputLine = Color3.fromRGB(120, 120, 120),
+			Text = Color3.fromRGB(255, 255, 255),
 		};
 	end
 };
