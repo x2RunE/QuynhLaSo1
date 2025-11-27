@@ -1,1 +1,14 @@
-loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/11efe09560491f96"))()
+local place_id = {
+    [6360478118] = "Grand Piece Online",
+    [11424731604] = "Grand Piece Online",
+    [1730877806] = "Grand Piece Online",
+    [7465136166] = "Grand Piece Online",
+    [3978370137] = "Grand Piece Online",
+    [6811831486] = 'Grand Piece Online',
+    [2753915549] = 'Blox Fruits',
+    [4442272183] = 'Blox Fruits',
+    [7449423635] = 'Blox Fruits'
+}
+if place_id[game.PlaceId] == "Grand Piece Online" then
+    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/7ff3bd5d1081c93c8eec4788572f2c6c.lua"))()    
+end
