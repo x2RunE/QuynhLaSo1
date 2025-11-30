@@ -10,5 +10,9 @@ local place_id = {
     [7449423635] = 'Blox Fruits'
 }
 if place_id[game.PlaceId] == "Grand Piece Online" then
-    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/7ff3bd5d1081c93c8eec4788572f2c6c.lua"))()    
+    if getgenv().Kaitun then
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/bbc757ff9e647eb956ea5e0243158663.lua"))()
+    else
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/7ff3bd5d1081c93c8eec4788572f2c6c.lua"))() 
+    end
 end
