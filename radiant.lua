@@ -11,7 +11,7 @@ local place_id = {
 }
 if place_id[game.PlaceId] == "Grand Piece Online" then
     if getgenv().Kaitun then
-        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/bbc757ff9e647eb956ea5e0243158663.lua"))()
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/0c77fdc97b797339625442ae88021b1e.lua"))()
     elseif getgenv().Santa then
         loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/19b3855ecfbe969aa2e8a2fa2024d5e0.lua"))()
     else
