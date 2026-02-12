@@ -34,6 +34,8 @@ if place_id[game.PlaceId] == "Grand Piece Online" then
         loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/0c77fdc97b797339625442ae88021b1e.lua"))()
     elseif getgenv().Santa then
         loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/19b3855ecfbe969aa2e8a2fa2024d5e0.lua"))()
+    elseif getgenv().ImpelDown then
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/66bf2dd647d9d915717aa40ddbd8832e.lua"))()
     else
         loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/7ff3bd5d1081c93c8eec4788572f2c6c.lua"))() 
     end
