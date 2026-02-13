@@ -40,5 +40,5 @@ if place_id[game.PlaceId] == "Grand Piece Online" then
         loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/7ff3bd5d1081c93c8eec4788572f2c6c.lua"))() 
     end
 elseif place_id[game.PlaceId] == "Blox Fruits" then
-    print('Panda banned me')
+    loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/59774ddab40ca9e20397165d10849ceb.lua"))()
 end
