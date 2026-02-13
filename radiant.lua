@@ -5,9 +5,9 @@ local place_id = {
     [7465136166] = "Grand Piece Online",
     [3978370137] = "Grand Piece Online",
     [6811831486] = 'Grand Piece Online',
-    [85211729168715] = 'Blox Fruits',
-    [79091703265657] = 'Blox Fruits',
-    [100117331123089] = 'Blox Fruits'
+    [7449423635] = 'Blox Fruits',
+    [4442272183] = 'Blox Fruits',
+    [2753915549] = 'Blox Fruits'
 }
 if place_id[game.PlaceId] == "Grand Piece Online" then
     local ServiceNames = {"ReplicatedStorage","TweenService", "Players", "Workspace","RunService","UserInputService"}
