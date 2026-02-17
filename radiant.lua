@@ -5,6 +5,7 @@ local place_id = {
     [7465136166] = "Grand Piece Online",
     [3978370137] = "Grand Piece Online",
     [6811831486] = 'Grand Piece Online',
+    [116480749200627] = 'Grand Piece Online',
     [7449423635] = 'Blox Fruits',
     [4442272183] = 'Blox Fruits',
     [2753915549] = 'Blox Fruits'
