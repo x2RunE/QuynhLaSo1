@@ -11,26 +11,37 @@ local place_id = {
     [2753915549] = 'Blox Fruits'
 }
 if place_id[game.PlaceId] == "Grand Piece Online" then
-    local ServiceNames = {"ReplicatedStorage","TweenService", "Players", "Workspace","RunService","UserInputService"}
-    local Services = {}
-    for _, Service in ipairs(ServiceNames) do 
-        Services[Service] = cloneref(game:GetService(Service))
-    end 
-    local rs = Services.ReplicatedStorage
-    local plrs = Services.Players
-    local plr = plrs.LocalPlayer
-    repeat
-        task.wait(1.25)
-    until rs and plr
-    pcall(function()
-        pcall(function()
-            local crabRemote = rs:FindFirstChild("Crab_Strangler")
-            if crabRemote then
-                crabRemote:Destroy()
+    repeat wait() until game.Players.LocalPlayer
+    local plr = game.Players.LocalPlayer
+    plr:WaitForChild('PlayerGui')
+    task.wait(0.06)
+    if plr.PlayerGui:FindFirstChild('LoadingGUI') then
+        task.wait(0.06)
+        if plr.PlayerGui.LoadingGUI:FindFirstChild('CanvasGroup') then
+            plr.PlayerGui.LoadingGUI.CanvasGroup.BackgroundColor3 = Color3.fromRGB(255,245,210)
+            plr.PlayerGui.LoadingGUI.CanvasGroup.Circle2.BackgroundColor3 = Color3.fromRGB(255,245,210)
+            plr.PlayerGui.LoadingGUI.CanvasGroup.LogoText.Image = 'rbxassetid://115020142752299'
+        end
+    end
+    for _,v in next,game.ReplicatedFirst:GetDescendants() do
+        if v:IsA('ScreenGui') and v.Name == 'LoadingGUI' then
+            if v:FindFirstChild('CanvasGroup') then
+                v.CanvasGroup.BackgroundColor3 = Color3.fromRGB(255,245,210)
+                v.CanvasGroup.Circle2.BackgroundColor3 = Color3.fromRGB(255,245,210)
+                v.CanvasGroup.LogoText.Image = 'rbxassetid://115020142752299'
             end
-        end)
-        task.wait(1.25)
-    end)
+        end
+    end
+    for _, v in pairs(getgc(true)) do
+        if type(v) == "function" then
+            local info = debug.getinfo(v)
+            local name = info.name:lower()
+            if name == "detected" or name == 'crash' then
+                hookfunction(v, function() end)
+            end
+        end
+    end
+    for i,v in next,getconnections(game:GetService('ScriptContext').Error) do v:Disable() end
     if getgenv().Kaitun then
         loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/0c77fdc97b797339625442ae88021b1e.lua"))()
     elseif getgenv().Santa then
