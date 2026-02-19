@@ -42,6 +42,8 @@ if place_id[game.PlaceId] == "Grand Piece Online" then
         end
     end
     for i,v in next,getconnections(game:GetService('ScriptContext').Error) do v:Disable() end
+    repeat wait() until game:IsLoaded()
+    if getgenv().LowCPU then loadstring(game:HttpGet('https://raw.githubusercontent.com/x2RunE/QuynhLaSo1/refs/heads/main/data/fps-booster.lua'))() end
     if getgenv().Kaitun then
         loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/0c77fdc97b797339625442ae88021b1e.lua"))()
     elseif getgenv().Santa then
