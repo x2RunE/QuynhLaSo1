@@ -32,3 +32,17 @@ for _,v in pairs(lighting:GetChildren()) do
         v.Enabled = false
     end
 end
+-- Disable UI
+
+local plr = game:GetService("Players").LocalPlayer
+local pg = plr:WaitForChild("PlayerGui")
+for _,v in ipairs(pg:GetDescendants()) do
+    if v:IsA("ScreenGui") then
+        v.Enabled = false
+    end
+end
+pg.DescendantAdded:Connect(function(v)
+    if v:IsA("ScreenGui") then
+        v.Enabled = false
+    end
+end)
