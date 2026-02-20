@@ -32,16 +32,18 @@ if place_id[game.PlaceId] == "Grand Piece Online" then
             end
         end
     end
-    for _, v in pairs(getgc(true)) do
-        if type(v) == "function" then
-            local info = debug.getinfo(v)
-            local name = info.name:lower()
-            if name == "detected" or name == 'crash' then
-                hookfunction(v, function() end)
-            end
-        end
-    end
-    for i,v in next,getconnections(game:GetService('ScriptContext').Error) do v:Disable() end
+    pcall(function()
+        for _, v in pairs(getgc(true)) do
+            if type(v) == "function" then
+                local info = debug.getinfo(v)
+                local name = info.name:lower()
+                if name == "detected" or name == 'crash' then
+                    hookfunction(v, function() end)
+                end
+             end
+         end
+         for i,v in next,getconnections(game:GetService('ScriptContext').Error) do v:Disable() end
+    end)
     repeat wait() until game:IsLoaded()
     if getgenv().LowCPU then loadstring(game:HttpGet('https://raw.githubusercontent.com/x2RunE/QuynhLaSo1/refs/heads/main/data/fps-booster.lua'))() end
     if getgenv().Kaitun then
