@@ -33,9 +33,9 @@ if place_id[game.PlaceId] == "Grand Piece Online" then
     for _,v in next,game.ReplicatedFirst:GetDescendants() do
         if v:IsA('ScreenGui') and v.Name == 'LoadingGUI' then
             if v:FindFirstChild('CanvasGroup') then
-                v.CanvasGroup.BackgroundColor3 = Color3.fromRGB(255,245,210)
-                v.CanvasGroup.Circle2.BackgroundColor3 = Color3.fromRGB(255,245,210)
-                v.CanvasGroup.LogoText.Image = 'rbxassetid://115020142752299'
+                v.CanvasGroup.BackgroundColor3 = getgenv().Custom.LoadingBackground or Color3.fromRGB(255,245,210)
+                v.CanvasGroup.Circle2.BackgroundColor3 = getgenv().Custom.LoadingBackground or Color3.fromRGB(255,245,210)
+                v.CanvasGroup.LogoText.Image = (getgenv().Custom.LoadingImg or 'rbxassetid://115020142752299')'
             end
         end
     end
