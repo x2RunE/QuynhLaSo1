@@ -10,6 +10,13 @@ local place_id = {
     [4442272183] = 'Blox Fruits',
     [2753915549] = 'Blox Fruits'
 }
+if not getgenv().Custom then
+    getgenv().Custom = {
+        LoadingBackground = Color3.fromRGB(255,245,210),
+        LoadingImg = 'rbxassetid://115020142752299',
+        WebhookImg = nil
+    }
+end
 if place_id[game.PlaceId] == "Grand Piece Online" then
     repeat wait() until game.Players.LocalPlayer and game:GetService('ReplicatedStorage')
     local plr = game.Players.LocalPlayer
@@ -18,9 +25,9 @@ if place_id[game.PlaceId] == "Grand Piece Online" then
     if plr.PlayerGui:FindFirstChild('LoadingGUI') then
         task.wait(0.06)
         if plr.PlayerGui.LoadingGUI:FindFirstChild('CanvasGroup') then
-            plr.PlayerGui.LoadingGUI.CanvasGroup.BackgroundColor3 = Color3.fromRGB(255,245,210)
-            plr.PlayerGui.LoadingGUI.CanvasGroup.Circle2.BackgroundColor3 = Color3.fromRGB(255,245,210)
-            plr.PlayerGui.LoadingGUI.CanvasGroup.LogoText.Image = 'rbxassetid://115020142752299'
+            plr.PlayerGui.LoadingGUI.CanvasGroup.BackgroundColor3 = getgenv().Custom.LoadingBackground or Color3.fromRGB(255,245,210)
+            plr.PlayerGui.LoadingGUI.CanvasGroup.Circle2.BackgroundColor3 = getgenv().Custom.LoadingBackground or Color3.fromRGB(255,245,210)
+            plr.PlayerGui.LoadingGUI.CanvasGroup.LogoText.Image = (getgenv().Custom.LoadingImg or 'rbxassetid://115020142752299')
         end
     end
     for _,v in next,game.ReplicatedFirst:GetDescendants() do
