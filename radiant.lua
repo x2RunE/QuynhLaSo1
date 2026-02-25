@@ -60,6 +60,7 @@ if place_id[game.PlaceId] == "Grand Piece Online" then
                      for i,v in next,getconnections(game:GetService('ScriptContext').Error) do v:Disconnect() end
                 end
             end)
+            game.ReplicatedStorage.Events.checkCanUse.OnClientInvoke = function() return true end
         end)
         task.wait(1.25)
     end)
