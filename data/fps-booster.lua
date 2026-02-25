@@ -2,7 +2,7 @@ local g = game
 local s = settings()
 local lighting = g:GetService("Lighting")
 pcall(function()
-    s.Rendering.QualityLevel = Enum.QualityLevel.Level01
+    settings().Rendering.QualityLevel = Enum.QualityLevel.Level01
 end)
 local function optimize(obj)
     if obj:IsA("BasePart") then
