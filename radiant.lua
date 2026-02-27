@@ -42,7 +42,7 @@ if place_id[game.PlaceId] == "Grand Piece Online" then
     repeat wait() until game:IsLoaded()
     pcall(function()
         pcall(function()
-            local crabRemote = rs:FindFirstChild("Crab_Strangler")
+            local crabRemote = game.ReplicatedStorage:FindFirstChild("Crab_Strangler")
             if crabRemote then
                 crabRemote:Destroy()
             end
