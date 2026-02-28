@@ -18,52 +18,7 @@ if not getgenv().Custom then
     }
 end
 if place_id[game.PlaceId] == "Grand Piece Online" then
-    repeat wait() until game.Players.LocalPlayer and game:GetService('ReplicatedStorage')
-    local plr = game.Players.LocalPlayer
-    plr:WaitForChild('PlayerGui')
-    task.wait(0.06)
-    if plr.PlayerGui:FindFirstChild('LoadingGUI') then
-        task.wait(0.06)
-        if plr.PlayerGui.LoadingGUI:FindFirstChild('CanvasGroup') then
-            plr.PlayerGui.LoadingGUI.CanvasGroup.BackgroundColor3 = getgenv().Custom.LoadingBackground or Color3.fromRGB(255,245,210)
-            plr.PlayerGui.LoadingGUI.CanvasGroup.Circle2.BackgroundColor3 = getgenv().Custom.LoadingBackground or Color3.fromRGB(255,245,210)
-            plr.PlayerGui.LoadingGUI.CanvasGroup.LogoText.Image = (getgenv().Custom.LoadingImg or 'rbxassetid://115020142752299')
-        end
-    end
-    for _,v in next,game.ReplicatedFirst:GetDescendants() do
-        if v:IsA('ScreenGui') and v.Name == 'LoadingGUI' then
-            if v:FindFirstChild('CanvasGroup') then
-                v.CanvasGroup.BackgroundColor3 = getgenv().Custom.LoadingBackground or Color3.fromRGB(255,245,210)
-                v.CanvasGroup.Circle2.BackgroundColor3 = getgenv().Custom.LoadingBackground or Color3.fromRGB(255,245,210)
-                v.CanvasGroup.LogoText.Image = (getgenv().Custom.LoadingImg or 'rbxassetid://115020142752299')
-            end
-        end
-    end
-    repeat wait() until game:IsLoaded()
-    pcall(function()
-        pcall(function()
-            local crabRemote = game.ReplicatedStorage:FindFirstChild("Crab_Strangler")
-            if crabRemote then
-                crabRemote:Destroy()
-            end
-            pcall(function()
-                if getconnections then
-                    for _, v in pairs(getgc(true)) do
-                        if type(v) == "function" then
-                            local info = debug.getinfo(v)
-                            local name = info.name:lower()
-                            if name == "detected" or name == 'crash' then
-                                hookfunction(v, function() end)
-                            end
-                         end
-                     end
-                     for i,v in next,getconnections(game:GetService('ScriptContext').Error) do v:Disconnect() end
-                end
-            end)
-            game.ReplicatedStorage.Events.checkCanUse.OnClientInvoke = function() return true end
-        end)
-        task.wait(1.25)
-    end)
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/x2RunE/QuynhLaSo1/refs/heads/main/data/gpo-bypass.lua"))()
     if getgenv().LowCPU then loadstring(game:HttpGet('https://raw.githubusercontent.com/x2RunE/QuynhLaSo1/refs/heads/main/data/fps-booster.lua'))() end
     if getgenv().Kaitun then
         loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/0c77fdc97b797339625442ae88021b1e.lua"))()
