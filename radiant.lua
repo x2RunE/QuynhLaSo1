@@ -8,7 +8,8 @@ local place_id = {
     [116480749200627] = 'Grand Piece Online',
     [7449423635] = 'Blox Fruits',
     [4442272183] = 'Blox Fruits',
-    [2753915549] = 'Blox Fruits'
+    [2753915549] = 'Blox Fruits',
+    [14890802310] = 'Bizarre Lineage'
 }
 if not getgenv().Custom then
     getgenv().Custom = {
@@ -29,6 +30,8 @@ if place_id[game.PlaceId] == "Grand Piece Online" then
     else
         loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/7ff3bd5d1081c93c8eec4788572f2c6c.lua"))() 
     end
+elseif place_id[game.PlaceId] == 'Bizarre Lineage' then
+    loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/3b69a1c7da2bfc3b76fdf66a74beb618.lua"))()
 elseif place_id[game.PlaceId] == "Blox Fruits" then
     loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/59774ddab40ca9e20397165d10849ceb.lua"))()
 end
