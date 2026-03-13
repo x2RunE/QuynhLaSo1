@@ -9,7 +9,8 @@ local place_id = {
     [7449423635] = 'Blox Fruits',
     [4442272183] = 'Blox Fruits',
     [2753915549] = 'Blox Fruits',
-    [14890802310] = 'Bizarre Lineage'
+    [14890802310] = 'Bizarre Lineage',
+    [80469437126309] = 'MM2'
 }
 if not getgenv().Custom then
     getgenv().Custom = {
@@ -36,4 +37,6 @@ elseif place_id[game.PlaceId] == 'Bizarre Lineage' then
     loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/3b69a1c7da2bfc3b76fdf66a74beb618.lua"))()
 elseif place_id[game.PlaceId] == "Blox Fruits" then
     loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/59774ddab40ca9e20397165d10849ceb.lua"))()
+elseif place_id[game.PlaceId] == "MM2" then
+    loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/09c65cb64bfa8b122254f33985d9650e.lua"))()
 end
