@@ -21,7 +21,7 @@ if not getgenv().Custom then
 end
 if place_id[game.PlaceId] == "Grand Piece Online" then
     local exc_name = getexecutorname()
-    if not exc_name:find("Volt") and not exc_name:find("Arceus") then
+    if not exc_name:find("Volt") and not exc_name:find("Arceus") and not exc_name:find('delta') and not exc_name:find('Codex') then
           loadstring(game:HttpGet("https://raw.githubusercontent.com/x2RunE/QuynhLaSo1/refs/heads/main/data/gpo-bypass.lua"))()
     end
     if getgenv().LowCPU then loadstring(game:HttpGet('https://raw.githubusercontent.com/x2RunE/QuynhLaSo1/refs/heads/main/data/fps-booster.lua'))() end
