@@ -26,13 +26,7 @@ if place_id[game.PlaceId] == "Grand Piece Online" then
     end
     if getgenv().LowCPU then loadstring(game:HttpGet('https://raw.githubusercontent.com/x2RunE/QuynhLaSo1/refs/heads/main/data/fps-booster.lua'))() end
     if getgenv().Kaitun then
-        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/0c77fdc97b797339625442ae88021b1e.lua"))()
-    elseif getgenv().Santa then
-        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/19b3855ecfbe969aa2e8a2fa2024d5e0.lua"))()
-    elseif getgenv().ImpelDown then
-        loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/fd8318e71e29221c1d4bf1619195c637.lua"))()
-    elseif getgenv().Cupid then
-        loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/96878ba8fb8985465d77e6242cdfbb8c.lua"))()
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/18a9ecec334aad902e1711861cde0861.lua"))()
     else
         loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/7ff3bd5d1081c93c8eec4788572f2c6c.lua"))() 
     end
