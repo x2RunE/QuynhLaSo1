@@ -158,7 +158,7 @@ local themes = {
 	Immortal = {
 		['Shadow'] = Color3.fromRGB(15, 15, 15),
 		['Background'] = Color3.fromRGB(20, 20, 20),
-		['Page'] = Color3.fromRGB(18, 18, 18),
+		['Page'] = Color3.fromRGB(180, 96, 96),
 		['Main'] = Color3.fromRGB(50, 50, 50),
 		['Text & Icon'] = Color3.fromRGB(230, 230, 230),
 		['Function'] = {
@@ -1117,14 +1117,12 @@ do
 end
 
 function Library:Window(p)
-
 	local Title = p.Title or 'null'
 	local Desc = p.Desc or ''
 	local Icon = p.Icon or 'door-open'
 	local Theme = p.Theme or 'Dark'
 	local Keybind = p.Config.Keybind or Enum.KeyCode.LeftControl
 	local Size = p.Config.Size or UDim2.new(0, 530,0, 400)
-
 	local R, HAA = false, false
 	local HasChangeTheme = p.Theme
 	local IsTheme = p.Theme
