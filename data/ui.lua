@@ -156,7 +156,7 @@ local themes = {
 		}
 	},
 	Immortal = {
-		['Shadow'] = Color3.fromRGB(231, 36, 36),
+		['Shadow'] = Color3.fromRGB(15, 15, 15),
 		['Background'] = Color3.fromRGB(20, 20, 20),
 		['Page'] = Color3.fromRGB(18, 18, 18),
 		['Main'] = Color3.fromRGB(50, 50, 50),
