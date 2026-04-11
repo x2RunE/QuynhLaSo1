@@ -21,14 +21,14 @@ if not getgenv().Custom then
 end
 if place_id[game.PlaceId] == "Grand Piece Online" then
     local exc_name = getexecutorname()
-    if not exc_name:find("Volt") and not exc_name:find("Arceus") and not exc_name:find('delta') and not exc_name:find('Codex') then
-          loadstring(game:HttpGet("https://raw.githubusercontent.com/x2RunE/QuynhLaSo1/refs/heads/main/data/gpo-bypass.lua"))()
-    end
+    -- if not exc_name:find("Volt") and not exc_name:find("Arceus") and not exc_name:find('delta') and not exc_name:find('Codex') then
+    --       loadstring(game:HttpGet("https://raw.githubusercontent.com/x2RunE/QuynhLaSo1/refs/heads/main/data/gpo-bypass.lua"))()
+    -- end
     if getgenv().LowCPU then loadstring(game:HttpGet('https://raw.githubusercontent.com/x2RunE/QuynhLaSo1/refs/heads/main/data/fps-booster.lua'))() end
     if getgenv().Kaitun then
         loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/18a9ecec334aad902e1711861cde0861.lua"))()
     else
-        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/7ff3bd5d1081c93c8eec4788572f2c6c.lua"))() 
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/891025fb57e91318ed1053147e616017.lua"))()
     end
 elseif place_id[game.PlaceId] == 'Bizarre Lineage' then
     loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/3b69a1c7da2bfc3b76fdf66a74beb618.lua"))()
