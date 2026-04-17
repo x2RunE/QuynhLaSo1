@@ -1,3 +1,4 @@
+repeat wait(1) until game:IsLoaded() and game.Players.LocalPlayer
 local g = game
 local s = settings()
 local lighting = g:GetService("Lighting")
