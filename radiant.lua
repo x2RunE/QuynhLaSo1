@@ -10,7 +10,8 @@ local place_id = {
     [4442272183] = 'Blox Fruits',
     [2753915549] = 'Blox Fruits',
     [14890802310] = 'Bizarre Lineage',
-    [80469437126309] = 'MM2'
+    [80469437126309] = 'MM2',
+    [99449877692519] = 'bridger'
 }
 if not getgenv().Custom then
     getgenv().Custom = {
@@ -19,12 +20,12 @@ if not getgenv().Custom then
         WebhookImg = nil
     }
 end
+if getgenv().LowCPU then loadstring(game:HttpGet('https://raw.githubusercontent.com/x2RunE/QuynhLaSo1/refs/heads/main/data/fps-booster.lua'))() end
 if place_id[game.PlaceId] == "Grand Piece Online" then
     local exc_name = getexecutorname()
     -- if not exc_name:find("Volt") and not exc_name:find("Arceus") and not exc_name:find('delta') and not exc_name:find('Codex') then
     --       loadstring(game:HttpGet("https://raw.githubusercontent.com/x2RunE/QuynhLaSo1/refs/heads/main/data/gpo-bypass.lua"))()
     -- end
-    if getgenv().LowCPU then loadstring(game:HttpGet('https://raw.githubusercontent.com/x2RunE/QuynhLaSo1/refs/heads/main/data/fps-booster.lua'))() end
     if getgenv().Kaitun then
         loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/18a9ecec334aad902e1711861cde0861.lua"))()
     else
@@ -36,4 +37,6 @@ elseif place_id[game.PlaceId] == "Blox Fruits" then
     loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/59774ddab40ca9e20397165d10849ceb.lua"))()
 elseif place_id[game.PlaceId] == "MM2" then
     loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/09c65cb64bfa8b122254f33985d9650e.lua"))()
+elseif place_id[game.PlaceId] == 'bridger' then
+    loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/72696e6e7e5fcd2338c340715547bb95.lua"))()
 end
