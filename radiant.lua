@@ -39,4 +39,6 @@ elseif place_id[game.PlaceId] == "MM2" then
     loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/09c65cb64bfa8b122254f33985d9650e.lua"))()
 elseif place_id[game.PlaceId] == 'bridger' then
     loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/72696e6e7e5fcd2338c340715547bb95.lua"))()
+elseif getgenv().AOTR then
+    loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/d7725e79b4a2df438adc53571b90f6be.lua"))()
 end
